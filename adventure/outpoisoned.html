@@ -1,0 +1,60 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>You were poisoned by the Outsider</title>
+	
+	<link rel="stylesheet" href="css/gamehere.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet"> 
+	
+	<style>
+	
+	body {
+		background-image: url(images/poisoned.jpg);
+	]
+	
+	#buttontext {
+		
+	}
+	
+	</style>
+
+</head>
+
+<body>
+
+	<audio autoplay="autoplay" loop="loop">
+		<source src="music/Emotional Dark Music - The Eternal Forest.mp3" type="audio/mpeg">
+	</audio>
+
+<div id="poison">
+	<div id="message"></div>
+	
+	<form name="homepage" method="post" onSubmit="return home()">
+	
+	<div id="buttontext">
+	<input type="submit" value="RETURN TO START PAGE"/>
+	</div>
+	
+	</form>
+</div>
+
+	<script>
+
+		var out = sessionStorage.getItem("out");
+		var user = sessionStorage.getItem("user");
+		
+		document.getElementById("message").innerHTML = "<h1>YOU DIED!</h1><h1>Cause of death: poisoned water offered to you by the outsider, "+out+".</h1>";
+
+		function home() {
+	
+			location = "adventure_homepage.html";
+		
+			return false;
+	
+		}
+	
+	</script>
+	
+</body>
+
+</html>

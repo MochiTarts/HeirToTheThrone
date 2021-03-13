@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <title>Adventure Game</title>
+    
+    <style>
+	
+	body {
+		background-image: url(images/homepageback.jpg);
+	}
+		
+	</style>
+    
+    <link rel="stylesheet" href="css/gamehere.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet"> 
+    
+	<script>
+
+	var a = "Anne";
+	var b = "Brondolf";
+	var c = "Chris";
+	var d = "Dan";
+	var e = "Eve";
+	var f = "Fran";
+	var g = "Gord";
+	var heir = "";
+	var out = "";
+	
+	function start() {
+	
+		var user = document.game.theUser.value;
+		sessionStorage.setItem("user", user);
+		
+		var maxN = 7;
+		var minN = 1;
+		var heir = Math.floor(Math.random() * (maxN - minN + 1)) + minN;
+			if (heir == 1) {
+				var heir = a;
+				sessionStorage.setItem("heir", a);
+			} else if (heir == 2) {
+				var heir = b;
+				sessionStorage.setItem("heir", b);
+			} else if (heir == 3) {
+				var heir = c;
+				sessionStorage.setItem("heir", c);
+			} else if (heir == 4 ) {
+				var heir = d;
+				sessionStorage.setItem("heir", d);
+			} else if (heir == 5) {
+				var heir = e;
+				sessionStorage.setItem("heir", e);
+			} else if (heir == 6) {
+				var heir = f;
+				sessionStorage.setItem("heir", f);
+			} else if (heir == 7) {
+				var heir = g;
+				sessionStorage.setItem("heir", g);
+			}
+			
+		if (heir == e || heir == f || heir == g){
+			var maxN = 4;
+			var minN = 1;
+			var out = Math.floor(Math.random() * (maxN - minN + 1)) + minN;
+				if (out == 1) {
+					var out = a;
+					sessionStorage.setItem("out", a);
+				} else if (out == 2) {
+					var out = b;
+					sessionStorage.setItem("out", b);
+				} else if (out == 3) {
+					var out = c;
+					sessionStorage.setItem("out", c);
+				} else if (out == 4) {
+					var out = d;
+					sessionStorage.setItem("out", d);
+				}
+		} else if (heir == a || heir == b || heir == c || heir == d) {
+			var maxN = 7;
+			var minN = 5;
+			var out = Math.floor(Math.random() * (maxN - minN + 1)) + minN;
+				if (out == 5) {
+					var out = e;
+					sessionStorage.setItem("out", e);
+				} else if (out == 6) {
+					var out = f;
+					sessionStorage.setItem("out", f);
+				} else if (out == 7) {
+					var out = g;
+					sessionStorage.setItem("out", g);
+				}
+		}
+
+		alert("Welcome, "+user+", loyal advisor to the current ruler, King Regis. \nGood luck on your hunt to find the outsider amongst the royal family. \nBe careful to not arrest the true heir to the throne.");
+		
+		location = "starthall.html";
+		
+		//The identities of the heir and outsider is on the gather.html page.
+		
+		return false;
+			
+	}
+	
+	</script>
+    
+</head>
+
+<body>
+
+	<audio autoplay="autoplay" loop>
+		<source src="music/FINAL FANTASY XV OST - Somnus Instrumental.mp3" type="audio/mpeg">
+	</audio>
+
+	<div id="gametitle">
+	<h1>The Heir to the Throne</h1>
+	</div>
+
+<div id="book">
+	
+	<div id="intro">
+	<h2>Introduction</h2>
+	<p>You are a faithful advisor to King Regis Valor of the prosperous kingdom, Alfhild. Each generation, the current king will appoint one of his beloved children to be the next ruler of the kingdom.</p>
+	<p>As a new advisor, you want to make your mark in the royal family's life. So when you overheard a rumour one day related to the king's children, you couldn't help but to investigate more.</p>
+	<p>This rumor that you heard talks about one of the royal family's children, being an outsider. Someone who managed to sneak into the castle and gain trust of all the people inside, including King Regis.</p>
+	<p>Now, this outsider within the royal family is planning to take over the throne and ruin the Valor family's name and reputation, by secretly murdering the one whom King Regis will choose to take over the kingdom. The heir to the throne.</p>
+	<p>King Regis has already chosen the heir to throne, but will not reveal his/her name to anyone, including his children and you. At least, not until the night of the coronation ceremony. That is the night where the outsider plans to kill the heir to the throne.</p>
+	<p>Your job is to find out who the outsider is within the royal family, and arrest him/her. Around the castle, are several magic mirrors. These mirrors will give you clues in figuring out the identities of the heir and the outsider.</p>
+	<p>There are six mirrors that work within the castle, find them and read the clues they give you! Tonight is the night before the coronation, you have to find the outsider tonight! Good luck!</p>
+	</div>
+	
+	<div id="rules">
+	<h2>Rules</h2>
+	<p>You have free exploration around the castle, there are several rooms you can explore, but only a few will contain working magic mirrors.</p>
+	<p>Be careful! You don't know who the outsider or the heir is, so DON'T BE DECEIVED BY THEM!</p>
+	<p>Each time you find new clues about the outsider or the heir, you can click on the "GATHER THE ROYAL CHILDREN" button to call all the royal children together.</p>
+	<p>There, you can look at your evidence again and the profiles of the royal children to confirm your thoughts on who's the outsider and who's the heir. Then, if you're confident enough, you can select the name of the child and he/she will be arrested immediately!</p>
+	<p>If you arrest a NORMAL family member, nothing will happen and the game will continue.</p>
+	<p>If you arrest the OUTSIDER, the game will be over, and you will have won! The royal family's name will not be tarnished and the kingdom will continue being prosperous!</p>
+	<p>If you arrest the HEIR, the game will be over, and you will have lost! The outsider takes over the throne and will give power to his/her birth kingdom. The royal family will be ruined!</p>
+	</div>
+	
+</div>
+	
+	<form name="game" method="post" onSubmit="return start()" id="home">
+
+	<p>
+	<label for="theUser">Please enter the name you wish to be called for this game.</label>
+	</p>
+	<p>
+	<input type="text" id="theUser" name="user" required/>
+	</p>
+
+	<div id="buttontext">
+	<input type="submit" value="START GAME"/>
+	</div>
+	
+	</form>
+
+</body>
+
+</html>

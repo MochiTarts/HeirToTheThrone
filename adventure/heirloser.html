@@ -1,0 +1,57 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>You arrested the Heir</title>
+
+	<link href="css/gamehere.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Eczar|Inknut+Antiqua|Vidaloka" rel="stylesheet">
+
+	<style>
+
+	body {
+		background-image: url(images/wrongheir.png);
+	}
+	
+	</style>
+
+</head>
+
+<body>
+
+	<audio autoplay="autoplay" loop>
+		<source src="music/High Price Victory Soundtrack Pro.mp3" type="audio/mpeg">
+	</audio>
+
+<div id="heirarrest">
+	<div id="message"></div>
+	
+	<form name="homepage" method="post" onSubmit="return home()">
+	
+	<div id="buttontext">
+	<input type="submit" value="PLAY AGAIN"/>
+	</div>
+	
+	</form>
+</div>
+
+	<script>
+
+		var heir = sessionStorage.getItem("heir");
+		var user = sessionStorage.getItem("user");
+		
+		document.getElementById("message").innerHTML = "<h1>You arrested the heir to the throne, "+heir+"! How could you advisor "+user+"? And you called yourself a loyal advisor to the king? Now the kingdom will fall into shambles, all thanks to you!</h1>";
+	
+		function home() {
+	
+			location = "adventure_homepage.html";
+			sessionStorage.clear();
+		
+			return false;
+	
+		}
+	
+	</script>
+	
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Soldier's Barracks</title>
+	
+	<link rel="stylesheet" href="css/gamehere.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet">
+	
+	<style>
+	
+	body {
+		background-image: url(images/barracks.jpg);
+	}
+	
+	#task {
+		background-image: url(images/parchment.jpg);
+		margin-left: 150px;
+		margin-right: 150px;
+		text-align: center;
+		padding: 10px;
+		line-height: 20pt;
+		border-radius: 10px;
+	}
+	
+	#buttontext {
+		margin: 10px;
+	}
+	
+	input[type=submit] {
+		padding: 15px;
+		border-radius: 10px;
+	}
+	
+	#backimage {
+		background-image: url(images/magicmirror.png);
+		margin-left: 45px;
+		height: 500px;
+		width: 500px;
+		font-size: 10pt;
+		line-height: 30pt;
+		float: left;
+	}
+	
+	#evidence {
+		background-image: url(images/cluespaper.png);
+		background-repeat: no-repeat;
+		float: right;
+		margin-right: 45px;
+		padding-bottom: 300px;
+		padding-right: 5px;
+	}
+	
+	#written {
+		margin-top: 70px;
+		width: 435px;
+		padding-left: 35px;
+	}
+	
+	#congrats {
+		text-align: center;	
+		margin-top: 835px;
+		margin-left: 50px;
+		margin-right: 50px;
+		padding: 10px;
+		border-radius: 10px;
+		background-image: url(images/parchment.jpg);
+	}
+	
+	</style>
+
+	<script>
+
+	function clue() {
+
+		var magicwords = document.getElementById("theClue").value;
+			if (magicwords != "mirror, mirror, on the wall, may you reveal the royal family's secret") {
+				alert("Please type in the magic words properly. Spelling does count. You don't need to capitalize anything or insert the question mark or put in quotation marks. \nBut you do need to include the commas.");
+			} else {
+				document.getElementById("backimage").style.backgroundImage = "url(images/crackedmagicmirror.png)";
+				document.getElementById("backimage").style.marginLeft = "45px";
+				document.getElementById("backimage").style.height = "500px";
+				document.getElementById("backimage").style.width = "500px";
+				document.getElementById("message").style.visibility = "visible";
+				document.getElementById("message").style.paddingTop = "185px";
+				document.getElementById("message").style.paddingLeft = "90px";
+				document.getElementById("message").style.paddingRight = "40px";
+				document.getElementById("message").style.color = "#F00";
+			}
+
+		return false;
+		
+	}
+
+	function starthall() {
+		
+		location = "starthall.html";
+		
+		return false;
+
+	}
+	
+	function help() {
+	
+		var dunclue = sessionStorage.getItem("dunclue");
+		var cellarclue = sessionStorage.getItem("cellarclue");
+		var libclue = sessionStorage.getItem("libclue");
+		var thronclue = sessionStorage.getItem("thronclue");
+		var towerclue = sessionStorage.getItem("towerclue");
+		var courtclue = sessionStorage.getItem("courtclue");
+		
+		document.getElementById("evidence").style.visibility = "visible";
+		document.getElementById("clue1").innerHTML = dunclue;
+		document.getElementById("clue2").innerHTML = cellarclue;
+		document.getElementById("clue3").innerHTML = libclue;
+		document.getElementById("clue4").innerHTML = thronclue;
+		document.getElementById("clue5").innerHTML = towerclue;
+		document.getElementById("clue6").innerHTML = courtclue;
+	
+		return false;
+	
+	}
+	
+	function room() {
+	
+		location = "outclue1.html";
+	
+		return false;
+	
+	}
+
+	</script>
+
+</head>
+
+<body>
+	
+	<audio autoplay="autoplay" loop>
+		<source src="music/FINAL FANTASY XV OST - World Exploration Theme (Night).mp3" type="audio/mpeg">
+	</audio>
+
+	<div id="task">
+	<form name="mirror" method="post" onSubmit="return clue()">
+	
+	<label for="theClue">Please say the magic words: "mirror, mirror, on the wall, may you reveal the royal family's secret?" for the mirror to show you a clue.</label>
+	<input type="text" id="theClue" name="secret" required/>
+
+	<div id="buttontext">
+	<input type="submit" value="ASK FOR REVEAL"/>
+	</div>
+	
+	</form>
+
+	<form name="hall" method="post" onSubmit="return starthall()">
+
+	<div id="buttontext">
+	<input type="submit" value="GO BACK TO STARTING HALL"/>
+	</div>
+	
+	</form>
+	</div>
+
+	<div id="backimage">
+	<div id="message" style="visibility:hidden"><h1>There are no clues here. Don't give up, keep on trying. (Hint: scroll down)</h1></div>
+	</div>
+    
+    <form name="remind" method="post" onSubmit="return help()">
+	
+	<div id="buttontext">
+	<input type="submit" value="LOOK AT CLUES GATHERED"/>
+	</div>
+	
+	</form>
+	
+	<div id="evidence" style="visibility:hidden">
+	<div id="written">
+	<h1 id="cluetitle">Your Evidence</h1>
+	<ul id="list">
+		<li id="clue1"></li>
+		<li id="clue2"></li>
+		<li id="clue3"></li>
+		<li id="clue4"></li>
+		<li id="clue5"></li>
+		<li id="clue6"></li>
+	</ul>
+	</div>
+	</div>
+	
+	<form name="secret" method="post" onSubmit="return room()">
+	
+    <div id="congrats">
+	<h1>Congratulations! You found another secret room! Go there to get an even more beneficial clue!</h1>
+    <h3>To go to the secret room, you'll have to pass seven trials. They are quick timed events involving the range slider.</h3>
+	<h3>The slider is numbered from 1 to 7 (but you won't see those numbers). Each trial will give you a number, you have to slide the slider to that number. (Press the 'enter' key instead of 'submit' after you've slid the slider to the given number.)</h3>
+	<h3>Complete all seven trials successfully within the time limit, which is 8 seconds, and you'll be granted the identity of the outsider!</h3>
+	<div id="buttontext">
+	<input type="submit" value="GO TO SECRET ROOM"/>
+	</div>
+    </div>
+	
+	</form>
+
+</body>
+
+</html>

@@ -1,0 +1,332 @@
+body {
+	font-family: 'Eczar', serif;
+}
+
+audio {
+	display: none;
+}
+
+#gametitle {
+	text-align: center;
+	margin-top: 85px;
+	color: #9e0a00;
+	font-size: 20pt;
+}
+
+#book {
+	background-image: url(../images/rulesbook.png);
+	background-repeat: no-repeat;
+	padding-bottom: 100px;
+	position: relative;
+}
+
+#intro {
+	display: inline-block;
+	font-size: 12pt;
+	line-height: 15pt;
+	width: 500px;
+	margin-left: 105px;
+	margin-top: 100px;
+}
+
+#rules {
+	display: inline-block;
+	margin-left: 5vw;
+	font-size: 12pt;
+	line-height: 15pt;
+	width: 500px;
+	top: 12.5%;
+	position: absolute;
+}
+
+#home {
+	text-align: center;
+	margin-bottom: 25px;
+	color: #9e0a00;
+	background-image: url(../images/username.jpg);
+	opacity: 0.8;
+	margin-left: 300px;
+	margin-right: 300px;
+	padding-top: 5px;
+	padding-bottom: 25px;
+	border-radius: 10px;
+}
+
+input[type=text] {
+	width: 350px;
+	border-radius: 5px;
+}
+
+input[type=submit] {
+	padding: 15px;
+	border-radius: 10px;
+}
+
+input[type=submit] {
+	cursor: pointer;
+}
+
+#theClue {
+	width: 425px;	
+}
+
+#halltitle {
+	color: #9e0a00;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#welcome {
+	text-align: center;
+	margin-left: 150px;
+	margin-right: 150px;
+	background-image: url(../images/parchment.jpg);
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#block1 {
+	display: inline-block;
+	margin-left: 65px;
+	margin-bottom: 75px;
+	margin-top: 75px;
+}
+
+#block2 {
+	display: inline-block;
+	margin-left: 75px;
+}
+
+#block3 {
+	display: inline-block;
+	margin-left: 75px;
+}
+
+#block4 {
+	display: inline-block;
+	margin-left: 75px;
+}
+
+#blockextra {
+	display: inline-block;
+	margin-left: 75px;
+}
+
+#task {
+	background-image: url(../images/parchment.jpg);
+	margin-left: 150px;
+	margin-right: 150px;
+	text-align: center;
+	padding: 10px;
+	line-height: 20pt;
+	border-radius: 10px;
+	font-weight: bold;
+	color: #5b0702;
+}
+
+#takeaway {
+	background-image: url(../images/velvet.jpg);
+	padding: 5px;
+}
+
+#names {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#person1 {
+	display: inline-block;
+	font-size: 13pt;
+	padding-left: 36px;
+	padding-right: 100px;
+	color: #FFF;
+}
+	
+#person2 {
+	display: inline-block;
+	font-size: 13pt;
+	padding-right: 100px;
+	color: #FFF;
+}
+
+#person3 {
+	display: inline-block;
+	font-size: 13pt;
+	padding-right: 100px;
+	color: #FFF;
+}
+	
+#person4 {
+	display: inline-block;
+	font-size: 13pt;
+	padding-right: 100px;
+	color: #FFF;
+}
+	
+#person5 {
+	display: inline-block;
+	font-size: 13pt;
+	padding-right: 100px;
+	color: #FFF;
+}
+	
+#person6 {
+	display: inline-block;
+	font-size: 13pt;
+	padding-right: 100px;
+	color: #FFF;
+}
+
+#person7 {
+	display: inline-block;
+	font-size: 13pt;
+	padding-right: 50px;
+	color: #FFF;
+}
+
+#profile {
+	background-image: url(../images/parchment.jpg);
+	float: right;
+	font-size: 13pt;
+	width: 700px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 5px;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+#look {
+	margin-top: 10px;
+	margin-left: 555px;
+}
+
+#talk {
+	background-color: #AAA;
+	padding: 5px;
+	font-weight: bold;
+	margin-top: 150px;
+	margin-right: 100px;
+	margin-left: 100px;
+	box-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+	opacity: 0.75;
+}
+
+#fate {
+	margin-top: 100px;
+	margin-left: 200px;
+	margin-right: 200px;
+	padding: 5px;
+	background-image: url(../images/parchment.jpg);
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+#poison {
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-top: 200px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;
+	text-align: center;
+}
+
+#quick1 {
+	float: right;
+	text-align: center;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;	
+	font-size: 15pt;
+	margin-right: 300px;
+	margin-top: 175px;
+}
+
+#quick2 {
+	float: right;
+	text-align: center;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;	
+	font-size: 15pt;
+	margin-right: 300px;
+	margin-top: 175px;
+}
+
+#quick3 {
+	float: right;
+	text-align: center;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;	
+	font-size: 15pt;
+	margin-right: 300px;
+	margin-top: 175px;
+}
+
+#quick4 {
+	float: right;
+	text-align: center;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;	
+	font-size: 15pt;
+	margin-right: 300px;
+	margin-top: 175px;
+}
+
+#quick5 {
+	float: right;
+	text-align: center;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;	
+	font-size: 15pt;
+	margin-right: 300px;
+	margin-top: 175px;
+}
+
+#quick6 {
+	float: right;
+	text-align: center;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;	
+	font-size: 15pt;
+	margin-right: 300px;
+	margin-top: 175px;
+}
+
+#quick7 {
+	float: right;
+	text-align: center;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;	
+	font-size: 15pt;
+	margin-right: 300px;
+	margin-top: 175px;
+}
+
+#timer {
+	float: left;
+	font-size: 45pt;
+	margin-left: 300px;
+	margin-top: 250px;
+	background-color: #d1743e;
+	opacity: 0.7;
+	padding: 5px;
+	border-radius: 10px;
+	box-shadow: 0 0 3px #FF0000, 0 0 10px #160d59;	
+}
+
+#heirarrest {
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-top: 200px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;
+	text-align: center;
+}
+
+#outarrest {
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-top: 200px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	text-shadow: 0 0 3px #FF0000, 0 0 10px #175e00;
+	text-align: center;
+}

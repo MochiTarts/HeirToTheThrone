@@ -1,0 +1,219 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Starting Hallway</title>
+	
+	<style>
+	
+	body {
+		font-family: 'Inknut Antiqua';
+		background-image: url(images/halls.jpg);
+		line-height: 15pt;
+	}
+	
+	form {
+		margin-bottom: 10px;
+	}
+	
+	#buttontext {
+		text-align: center;
+	}
+	
+	#placepics {
+		background-image: url(images/parchment.jpg);
+		opacity: 0.8;
+		margin: 20px;
+		padding-bottom: 5px;
+		border-radius: 25px;
+	}
+	
+	</style>
+    
+	<link href="css/gamehere.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Eczar|Inknut+Antiqua|Vidaloka" rel="stylesheet">
+
+	<script>
+	
+	function loading() {
+		
+		if (sessionStorage.getItem("loaded1") == "gar") {
+			document.getElementById("place1").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded2") == "lib") {
+			document.getElementById("place2").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded3") == "master") {
+			document.getElementById("place3").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded4") == "top") {
+			document.getElementById("place4").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded5") == "pantry") {
+			document.getElementById("place5").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded6") == "dun") {
+			document.getElementById("place6").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded7") == "wash") {
+			document.getElementById("place7").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded8") == "stable") {
+			document.getElementById("place8").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded9") == "wine") {
+			document.getElementById("place9").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded10") == "barracks") {
+			document.getElementById("place10").style.color = "#710caf";	
+		} 
+		if (sessionStorage.getItem("loaded11") == "dine") {
+			document.getElementById("place11").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded12") == "court") {
+			document.getElementById("place12").style.color = "#710caf";	
+		}
+		if (sessionStorage.getItem("loaded13") == "throne") {
+			document.getElementById("place13").style.color = "#710caf";	
+		}
+		
+	}
+
+	function place() {
+		if (document.getElementById("garden").checked) {
+			location = "garden.html";
+			sessionStorage.setItem("loaded1", "gar");
+		} else if (document.getElementById("library").checked) {
+			location = "library.html";
+			sessionStorage.setItem("loaded2", "lib");
+		} else if (document.getElementById("mastersuite").checked) {
+			location = "master.html";
+			sessionStorage.setItem("loaded3", "master");
+		} else if (document.getElementById("toptower").checked) {
+			location = "tower.html";
+			sessionStorage.setItem("loaded4", "top");
+		} else if (document.getElementById("pantry").checked) {
+			location = "pantry.html";
+			sessionStorage.setItem("loaded5", "pantry");
+		} else if (document.getElementById("dungeon").checked) {
+			location = "dungeon.html";
+			sessionStorage.setItem("loaded6", "dun");
+		} else if (document.getElementById("washrooms").checked) {
+			location = "washrooms.html";
+			sessionStorage.setItem("loaded7", "wash");
+		} else if (document.getElementById("stables").checked) {
+			location = "stables.html";
+			sessionStorage.setItem("loaded8", "stable");
+		} else if (document.getElementById("winecellar").checked) {
+			location = "cellar.html";
+			sessionStorage.setItem("loaded9", "wine");
+		} else if (document.getElementById("soldierbarracks").checked) {
+			location = "barracks.html";
+			sessionStorage.setItem("loaded10", "barracks");
+		} else if (document.getElementById("kitchen").checked) {
+			location = "kitchen.html";
+			sessionStorage.setItem("loaded11", "dine");
+		} else if (document.getElementById("courtyard").checked) {
+			location = "courtyard.html";
+			sessionStorage.setItem("loaded12", "court");
+		} else if (document.getElementById("throneroom").checked) {
+			location = "throne.html";
+			sessionStorage.setItem("loaded13", "throne");
+		}
+		
+		return false;
+
+	}
+
+	function gather() {
+		
+		location = "gather.html";
+
+		return false;
+		
+	}
+
+	</script>
+
+</head>
+
+<body onload="loading()">
+
+	<audio autoplay="autoplay" loop="loop">
+		<source src="music/FINAL FANTASY XV OST - World Exploration Theme (Night).mp3" type="audio/mpeg">
+	</audio>
+
+<div id="container">
+	
+	<div id="halltitle">
+	<h1>Castle Halls</h1>
+	</div>
+	
+	<div id="welcome">
+	<h3>Welcome to the Hallway!</h3>
+	<p>Here, you are able to go anywhere within the castle. You are also able to call all the royal children together with the "GATHER THE ROYAL CHILDREN" button.</p>
+	</div>
+	
+	<form name="explore" method="post" onSubmit="return place()">
+	
+	<div id="placepics">
+	<div id="block1">
+	<p id="place1"><input type="radio" name="castle" id="garden" value="garden"/>Garden</p>
+	<img src="images/gardens.jpg" width="150px" height="65px"/>
+	<p id="place2"><input type="radio" name="castle" id="library" value="library"/>Library</p>
+	<img src="images/library.png" width="150px" height="65px"/>
+	<p id="place3"><input type="radio" name="castle" id="mastersuite" value="mastersuite"/>Master suite</p>
+	<img src="images/mastersuite.jpg" width="150px" height="65px"/>
+	</div>
+	
+	<div id="block2">
+	<p id="place4"><input type="radio" name="castle" id="toptower" value="toptower"/>Top tower</p>
+	<img src="images/tower.jpg" width="150px" height="65px"/>
+	<p id="place5"><input type="radio" name="castle" id="pantry" value="pantry"/>Pantry</p>
+	<img src="images/pantry.jpg" width="150px" height="65px"/>
+	<p id="place6"><input type="radio" name="castle" id="dungeon" value="dungeon"/>Dungeon</p>
+	<img src="images/dungeon.jpg" width="150px" height="65px"/>
+	</div>
+	
+	<div id="block3">
+	<p id="place7"><input type="radio" name="castle" id="washrooms" value="washrooms"/>Washrooms</p>
+	<img src="images/washroom.jpg" width="150px" height="65px"/>
+	<p id="place8"><input type="radio" name="castle" id="stables" value="stables"/>Horse stables</p>
+	<img src="images/stables.jpg" width="150px" height="65px"/>
+	<p id="place9"><input type="radio" name="castle" id="winecellar" value="winecellar"/>Wine cellar</p>
+	<img src="images/wine.jpg" width="150px" height="65px"/>
+	</div>
+	
+	<div id="block4">
+	<p id="place10"><input type="radio" name="castle" id="soldierbarracks" value="soldierbarracks"/>Soldier's barracks</p>
+	<img src="images/barracks.jpg" width="150px" height="65px"/>
+	<p id="place11"><input type="radio" name="castle" id="kitchen" value="kitchen"/>Dining Room</p>
+	<img src="images/dining.jpg" width="150px" height="65px"/>
+	<p id="place12"><input type="radio" name="castle" id="courtyard" value="courtyard"/>Courtyard</p>
+	<img src="images/courtyard.jpg" width="150px" height="65px"/>
+	</div>
+	
+	<div id="blockextra">
+	<p id="place13"><input type="radio" name="castle" id="throneroom" value="throneroom"/>Throne room</p>
+	<img src="images/throne.jpg" width="150px" height="65px"/>
+	</div>
+	</div>
+	
+	<div id="buttontext">
+	<input type="submit" value="GO TO LOCATION"/>
+	</div>
+
+	</form>
+
+	<form name="command" method="post" onSubmit="return gather()">
+
+	<div id="buttontext">
+	<input type="submit" value="GATHER THE ROYAL CHILDREN"/>
+	</div>
+
+	</form>
+
+</div>
+
+</body>
+
+</html>

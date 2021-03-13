@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8"/>
+    <title>Encounter</title>
+	
+	<link rel="stylesheet" href="css/gamehere.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet"> 
+	
+	<style>
+	
+	body {
+		background-image: url(images/encounters.png);
+	}
+	
+	</style>
+    
+    <script>
+	
+	var heir = sessionStorage.getItem("heir");
+	
+	document.write("<p id='talk'>"+heir+": Why, hello there, advisor! Fancy meeting you here! I'm so excited and nervous for the coronation ceremony tomorrow! I hope father picked me to be the heir! I think I have a good chance at ruling this kingdom! What do you think?</p>");
+	
+	function live() {
+		
+		if (document.getElementById("choice3").checked) {
+			alert(heir+': "H—hey! What is going on? What are you doing!? I am innocent! I SWEAR!!!"');
+			location = "heirloser.html";	
+		} else if (document.getElementById("choice1").checked) {
+			alert(heir+": I know right? This kingdom will for sure posper—I mean—prosper, under my rule!");
+			location = "starthall.html";	
+		} else if (document.getElementById("choice2").checked) {
+			alert(heir+": Sigh...I guess you're right. Thanks for bringing that to my attention, advisor.");
+			location = "starthall.html";	
+		}
+		
+		return false;
+		
+	}
+	
+	</script>
+    
+</head>
+
+<body>
+    
+	<div id="fate">
+    <form name="choice" method="post" onSubmit="return live()">
+    
+    <p><input type="radio" name="fate" id="choice1" value="choice1" required/>You'll make a great king.</p>
+    <p><input type="radio" name="fate" id="choice2" value="choice2" required/>I think you need to work on lowering your confidence a little...</p>
+    <p><input type="radio" name="fate" id="choice3" value="choice3" required/>You're the outsider! You are under arrest for treason!</p>
+    
+    <div id="buttontext">
+    <input type="submit" value="ENTER"/>
+    </div>
+    
+    </form>
+	</div>
+
+</body>
+
+</html>

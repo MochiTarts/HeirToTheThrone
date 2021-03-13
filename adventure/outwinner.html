@@ -1,0 +1,59 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>You arrested the Outsider</title>
+
+	<link href="css/gamehere.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Eczar|Inknut+Antiqua|Vidaloka" rel="stylesheet">
+
+	<style>
+
+	body {
+		background-image: url(images/outsider.png);
+	}
+
+	</style>
+
+</head>
+
+<body>
+
+	<audio autoplay="autoplay" loop>
+		<source src="music/Greatest Battle Music Of all Times -  United We Stand Divided We Fall.mp3" type="audio/mpeg">
+	</audio>
+
+<div id="outarrest">
+	<div id="message">
+	
+	</div>
+	
+	<form name="homepage" method="post" onSubmit="return home()">
+	
+	<div id="buttontext">
+	<input type="submit" value="PLAY AGAIN"/>
+	</div>
+	
+	</form>
+</div>
+
+	<script>
+
+		var out = sessionStorage.getItem("out");
+		var user = sessionStorage.getItem("user");
+		
+		document.getElementById("message").innerHTML = "<h1>You arrested the traitor within the family, "+out+"! Excellent work, advisor "+user+"! The kingdom will continue to prosper, all thanks to you!</h1>";
+
+		function home() {
+	
+			location = "adventure_homepage.html";
+			sessionStorage.clear();
+		
+			return false;
+	
+		}
+	
+	</script>
+	
+</body>
+
+</html>

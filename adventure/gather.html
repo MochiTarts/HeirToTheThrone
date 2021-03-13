@@ -1,0 +1,381 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Call Royal Children Together</title>
+	
+	<link rel="stylesheet" href="css/gamehere.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet"> 
+
+	<script>
+	
+	function loading() {
+		
+		if (sessionStorage.getItem("loadearlier1") == "Anne") {
+			document.getElementById("Anne").disabled = true;
+		}
+		if (sessionStorage.getItem("loadearlier2") == "Brondolf") {
+			document.getElementById("Brondolf").disabled = true;
+		}
+		if (sessionStorage.getItem("loadearlier3") == "Chris") {
+			document.getElementById("Chris").disabled = true;
+		}
+		if (sessionStorage.getItem("loadearlier4") == "Dan") {
+			document.getElementById("Dan").disabled = true;
+		}
+		if (sessionStorage.getItem("loadearlier5") == "Eve") {
+			document.getElementById("Eve").disabled = true;
+		}
+		if (sessionStorage.getItem("loadearlier6") == "Fran") {
+			document.getElementById("Fran").disabled = true;
+		}
+		if (sessionStorage.getItem("loadearlier7") == "Gord") {
+			document.getElementById("Gord").disabled = true;
+		}
+		
+	}
+
+	function choose() {
+		
+		var heir = sessionStorage.getItem("heir");
+		var out = sessionStorage.getItem("out");
+		
+		if (document.getElementById("Anne").checked) {
+			if (document.getElementById("Anne").value == heir) {
+				location = "heirloser.html";
+			} else if (document.getElementById("Anne").value == out) {
+				alert('Anne: "How on earth? How did you find out!?"');
+				location = "outwinner.html";
+			} else {
+				alert('Anne: "How could you? I trusted you advisor! What are you doing?" \n\nAnne is not the heir nor the traitor. Keep looking.');
+				sessionStorage.setItem("loadearlier1", "Anne");
+				location = "starthall.html";
+			}
+		} else if (document.getElementById("Brondolf").checked) {
+			if (document.getElementById("Brondolf").value == heir) {
+				location = "heirloser.html";
+			} else if (document.getElementById("Brondolf").value == out) {
+				alert('Brondolf: "B—but, how!?"');
+				location = "outwinner.html";
+			} else {
+				alert('Brondolf: "Get your hands off me! What is going on!? Advisor! I did not do anything!" \n\nBrondolf is not the heir nor the traitor. Keep looking.');
+				sessionStorage.setItem("loadearlier2", "Brondolf");
+				location = "starthall.html";
+			}
+		} else if (document.getElementById("Chris").checked) {
+			if (document.getElementById("Chris").value == heir) {
+				location = "heirloser.html";
+			} else if (document.getElementById("Chris").value == out) {
+				alert('Chris: "You have earned my respect, advisor. I did not think you would figure it out this easily."');
+				location = "outwinner.html";
+			} else {
+				alert('Chris: "Idiot! Idiot! Idiot! You idiot of an advisor! I wish father never brought you in!" \n\nChris is not the heir nor the traitor. Keep looking.');
+				sessionStorage.setItem("loadearlier3", "Chris");
+				location = "starthall.html";
+			}
+		} else if (document.getElementById("Dan").checked) {
+			if (document.getElementById("Dan").value == heir) {
+				location = "heirloser.html";
+			} else if (document.getElementById("Dan").value == out) {
+				alert('Dan: "Yeah. You arrested the right person, congratulations. But I promise I will return one day."');
+				location = "outwinner.html";
+			} else {
+				alert('Dan: "I will never forgive you, advisor. NEVER." \n\nDan is not the heir nor the traitor. Keep looking.');
+				sessionStorage.setItem("loadearlier4", "Dan");
+				location = "starthall.html";
+			}
+		} else if (document.getElementById("Eve").checked) {
+			if (document.getElementById("Eve").value == heir) {
+				location = "heirloser.html";
+			} else if (document.getElementById("Eve").value == out) {
+				alert('Eve: "So...you finally figured it out, huh? I guess this is my punishment."');
+				location = "outwinner.html";
+			} else {
+				alert('Eve: "Please! You have to believe me! I am innocent! PLEASE!!!" \n\nEve is not the heir nor the traitor. Keep looking.');
+				sessionStorage.setItem("loadearlier5", "Eve");
+				location = "starthall.html";
+			}
+		} else if (document.getElementById("Fran").checked) {
+			if (document.getElementById("Fran").value == heir) {
+				location = "heirloser.html";
+			} else if (document.getElementById("Fran").value == out) {
+				alert('Fran: "I—I cannot believe it. I am so sorry...I got caught..."');
+				location = "outwinner.html";
+			} else {
+				alert('Fran: "W—why are you doing this? What have I done? If I did something wrong then I am sorry! Let me go!" \n\nFran is not the heir nor the traitor. Keep looking.');
+				sessionStorage.setItem("loadearlier6", "Fran");
+				location = "starthall.html";
+			}
+		} else if (document.getElementById("Gord").checked) {
+			if (document.getElementById("Gord").value == heir) {
+				location = "heirloser.html";
+			} else if (document.getElementById("Gord").value == out) {
+				alert('Gord: "You may have caught me, but heed my warning, advisor. Alfhild and the Valor family will fall! One day..."');
+				location = "outwinner.html";
+			} else {
+				alert('Gord: "You are making a horrible mistake, advisor. Curse you. Curse you and all of your descendants." \n\nGord is not the heir nor the traitor. Keep looking.');
+				sessionStorage.setItem("loadearlier7", "Gord");
+				location = "starthall.html";
+			}
+		}
+
+		return false;
+		
+	}
+	
+	function clues() {
+	
+	var heir = sessionStorage.getItem("heir");
+	var out = sessionStorage.getItem("out");
+	
+	var profheir = "Is a 17 year old lover of horses and music. Gets along fairly well with other siblings, but would sometimes act a bit snobby. Very similar to the eldest child in looks and personality. Favourite dessert is sweet bread, hated drink is wine."; //The person with this profile is the heir. If you arrest this person, you lose.
+	var profout = "16 years old and very smart. Also likes to play pranks and is a rather cheerful and spirited child. Cares a lot about outward appearnces and always tries to do the best in any subject, such as language class. Likes riding horses."; //The person with this profile is the outsider. Arrest this one, and you will win.
+	var prof1 = "Is 18 years old and likes singing and drawing. Has a bit of a temper, but never lets it out on the younger siblings. Works hard on being fluent in English, and hates horseback riding.";
+	var prof2 = "An adorable 15 year old. Gets along very well with the court minstrel and would sometimes practice the lyre in private. Tries to keep a healthy diet and active lifestyle.";
+	var prof3 = "19 years old and very serious. Powerful fighter and negotiator, but has a soft side as well. Likes eating cake and horseback riding. Considered to be one of the best-looking children among the siblings.";
+	var prof4 = "A 16 year old child. Is rather shy and quiet, would sometimes have trouble getting along with older siblings, but loves them nonetheless. Hates horseback riding and drinking, loves the dessert portion of any meal. Full of curiosity and is somewhat sneaky.";
+	var prof5 = "Is a 17 year old artistic child. Not the most athletic sibling out of the royal children, but is very smart. Likes playing pranks on castle staff and siblings. Named the heaviest drinker at all formal feasts.";
+	var prof6 = "A bratty 17 year old whose only impressive attribute is physical appearance. Struggles in language class and would put down younger siblings to feel confident. Deep down, very insecure.";
+	var prof7 = "The quietest of the siblings. 16 years old and is very close to the kitchen staff, who would usually give gifts of foreign candy. Has a sweet singing voice, but rarely sings for other people to hear.";
+	
+	if (document.getElementById("anne").checked) {
+		if (document.getElementById("anne").value == heir) {
+			document.getElementById("aprof").innerHTML = profheir;
+		} else if (document.getElementById("anne").value == out) {
+			document.getElementById("aprof").innerHTML = profout;
+		} else {
+			document.getElementById("aprof").innerHTML = prof1;
+		} 
+	} else if (document.getElementById("brondolf").checked) {
+		if (document.getElementById("brondolf").value == heir) {
+			document.getElementById("bprof").innerHTML = profheir;
+		} else if (document.getElementById("brondolf").value == out) {
+			document.getElementById("bprof").innerHTML = profout;
+		} else {
+			document.getElementById("bprof").innerHTML = prof2;
+		}
+	} else if (document.getElementById("chris").checked) {
+		if (document.getElementById("chris").value == heir) {
+			document.getElementById("cprof").innerHTML = profheir;
+		} else if (document.getElementById("chris").value == out) {
+			document.getElementById("cprof").innerHTML = profout;
+		} else {
+			document.getElementById("cprof").innerHTML = prof3;
+		}
+	} else if (document.getElementById("dan").checked) {
+		if (document.getElementById("dan").value == heir) {
+			document.getElementById("dprof").innerHTML = profheir;
+		} else if (document.getElementById("dan").value == out) {
+			document.getElementById("dprof").innerHTML = profout;
+		} else {
+			document.getElementById("dprof").innerHTML = prof4;
+		}
+	} else if (document.getElementById("eve").checked) {
+		if (document.getElementById("eve").value == heir) {
+			document.getElementById("eprof").innerHTML = profheir;
+		} else if (document.getElementById("eve").value == out) {
+			document.getElementById("eprof").innerHTML = profout;
+		} else {
+			document.getElementById("eprof").innerHTML = prof5;
+		}
+	} else if (document.getElementById("fran").checked) {
+		if (document.getElementById("fran").value == heir) {
+			document.getElementById("fprof").innerHTML = profheir;
+		} else if (document.getElementById("fran").value == out) {
+			document.getElementById("fprof").innerHTML = profout;
+		} else {
+			document.getElementById("fprof").innerHTML = prof6;
+		}
+	} else if (document.getElementById("gord").checked) {
+		if (document.getElementById("gord").value == heir) {
+			document.getElementById("gprof").innerHTML = profheir;
+		} else if (document.getElementById("gord").value == out) {
+			document.getElementById("gprof").innerHTML = profout;
+		} else {
+			document.getElementById("gprof").innerHTML = prof7;
+		}
+	}
+	
+	return false;
+	
+	}
+	
+	function starthall() {
+		
+		location = "starthall.html";
+		
+		return false;
+
+	}
+	
+	function help() {
+	
+		var dunclue = sessionStorage.getItem("dunclue");
+		var cellarclue = sessionStorage.getItem("cellarclue");
+		var libclue = sessionStorage.getItem("libclue");
+		var thronclue = sessionStorage.getItem("thronclue");
+		var towerclue = sessionStorage.getItem("towerclue");
+		var courtclue = sessionStorage.getItem("courtclue");
+		
+		document.getElementById("evidence").style.visibility = "visible";
+		document.getElementById("clue1").innerHTML = dunclue;
+		document.getElementById("clue2").innerHTML = cellarclue;
+		document.getElementById("clue3").innerHTML = libclue;
+		document.getElementById("clue4").innerHTML = thronclue;
+		document.getElementById("clue5").innerHTML = towerclue;
+		document.getElementById("clue6").innerHTML = courtclue;
+	
+		return false;
+	
+	}
+
+	</script>
+	
+	<style>
+	
+	body {
+		background-image: url(images/gatherback.jpg);
+	}
+	
+	#evidence {
+		background-image: url(images/cluespaper.png);
+		background-repeat: no-repeat;
+		float: left;
+		margin-top: 50px;
+		padding-bottom: 300px;
+		padding-right: 5px;
+	}
+	
+	#written {
+		margin-top: 70px;
+		width: 435px;
+		padding-left: 35px;
+	}
+	
+	#buttontext {
+		margin-bottom: 5px;
+	}
+	
+	</style>
+
+</head>
+
+<body onload="loading()">
+
+	<audio autoplay="autoplay" loop>
+		<source src="music/FINAL FANTASY XV OST - Dawn  Song of the Stars.mp3" type="audio/mpeg">
+	</audio>
+
+	<form name="select" method="post" onSubmit="return choose()">
+	
+	<div id="takeaway">
+	<div id="names">
+	
+	<div id="person1">
+	<p><input type="radio" name="royalty" id="Anne" value="Anne" required/>Anne</p>
+	<img src="images/anne.jpg" width="65px"/>
+	</div>
+	
+	<div id="person2">
+	<p><input type="radio" name="royalty" id="Brondolf" value="Brondolf" required/>Brondolf</p>
+	<img src="images/brondolf.jpg" width="65px"/>
+	</div>
+	
+	<div id="person3">
+	<p><input type="radio" name="royalty" id="Chris" value="Chris" required/>Chris</p>
+	<img src="images/chris.jpg" width="65px"/>
+	</div>
+	
+	<div id="person4">
+	<p><input type="radio" name="royalty" id="Dan" value="Dan" required/>Dan</p>
+	<img src="images/dan.jpg" width="65px"/>
+	</div>
+	
+	<div id="person5">
+	<p><input type="radio" name="royalty" id="Eve" value="Eve" required/>Eve</p>
+	<img src="images/eve.jpg" width="65px"/>
+	</div>
+	
+	<div id="person6">
+	<p><input type="radio" name="royalty" id="Fran" value="Fran" required/>Fran</p>
+	<img src="images/fran.jpg" width="65px"/>
+	</div>
+	
+	<div id="person7">
+	<p><input type="radio" name="royalty" id="Gord" value="Gord" required/>Gord</p>
+	<img src="images/gord.jpg" width="65px"/>
+	</div>
+	
+	
+	</div>
+	
+	<div id="buttontext">
+	<input type="submit" value="ARREST"/>
+	</div>
+	
+	</form>
+	
+	<form name="hall" method="post" onSubmit="return starthall()">
+
+	<div id="buttontext">
+	<input type="submit" value="GO BACK TO STARTING HALL"/>
+	</div>
+	
+	</div>
+	
+	</form>
+	
+	<div id="evidence" style="visibility:hidden">
+	<div id="written">
+	<h1 id="cluetitle">Your Evidence</h1>
+	<ul id="list">
+		<li id="clue1"></li>
+		<li id="clue2"></li>
+		<li id="clue3"></li>
+		<li id="clue4"></li>
+		<li id="clue5"></li>
+		<li id="clue6"></li>
+	</ul>
+	</div>
+	</div>
+	
+	<div id="look">
+	<form name="remind" method="post" onSubmit="return help()">
+	
+	<div id="buttontext">
+	<input type="submit" value="LOOK AT CLUES GATHERED"/>
+	</div>
+	
+	</form>
+	</div>
+	
+	<div id="profile">
+	<form name="info" method="post" onSubmit="return clues()">
+	
+	<p><input type="radio" name="sibling" id="anne" value="Anne"/>Anne</p>
+	<div id="aprof"></div>
+	<p><input type="radio" name="sibling" id="brondolf" value="brondolf"/>Brondolf</p>
+	<div id="bprof"></div>
+	<p><input type="radio" name="sibling" id="chris" value="Chris"/>Chris</p>
+	<div id="cprof"></div>
+	<p><input type="radio" name="sibling" id="dan" value="Dan"/>Dan</p>
+	<div id="dprof"></div>
+	<p><input type="radio" name="sibling" id="eve" value="Eve"/>Eve</p>
+	<div id="eprof"></div>
+	<p><input type="radio" name="sibling" id="fran" value="Fran"/>Fran</p>
+	<div id="fprof"></div>
+	<p><input type="radio" name="sibling" id="gord" value="Gord"/>Gord</p>
+	<div id="gprof"></div>
+	
+	<div id="buttontext">
+	<input type="submit" value="LOOK AT PROFILE"/>
+	</div>
+	
+	</form>
+	</div>
+	
+	</form>
+
+
+</body>
+
+</html>

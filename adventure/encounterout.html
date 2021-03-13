@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8"/>
+    <title>Encounter</title>
+	
+	<link rel="stylesheet" href="css/gamehere.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet"> 
+	
+	<style>
+	
+	body {
+		background-image: url(images/encounters.png);
+	}
+	
+	</style>
+    
+    <script>
+	
+	var out = sessionStorage.getItem("out");
+	
+	document.write("<p id='talk'>"+out+": Advisor! Hello there, what are you doing up so late? The coronation ceremony is tomorrow! Oh never mind, you're probably busy doing a lot of preparations for just that! You must be tired, here, have some water.</p>");
+	
+	function live() {
+		
+		if (document.getElementById("choice1").checked) {
+			location = "outpoisoned.html";	
+		} else if (document.getElementById("choice2").checked) {
+			alert(out+": O—ok...I didn't mean to waste your time, advisor, I guess I'll be going...");
+			location = "starthall.html";	
+		} else {
+			alert(out+": H—how!? How did you know!?");
+			location = "outwinner.html";	
+		}
+		
+		return false;
+		
+	}
+	
+	</script>
+    
+</head>
+
+<body>
+    
+	<div id="fate">
+    <form name="choice" method="post" onSubmit="return live()">
+    
+    <p><input type="radio" name="fate" id="choice1" value="choice1" required/>Why, thank you, your Highness! (Takes glass of water).</p>
+    <p><input type="radio" name="fate" id="choice2" value="choice2" required/>No thank you, your Highness. I'm fine. (Refuse glass of water).</p>
+    <p><input type="radio" name="fate" id="choice3" value="choice3" required/>You're the outsider! You are under arrest for treason!</p>
+    
+    <div id="buttontext">
+    <input type="submit" value="ENTER"/>
+    </div>
+    
+    </form>
+	</div>
+
+</body>
+
+</html>

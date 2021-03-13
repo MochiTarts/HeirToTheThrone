@@ -1,0 +1,257 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Trials</title>
+	
+	<link rel="stylesheet" href="css/gamehere.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet">
+	
+	<style>
+	
+	body {
+		background-image: url(images/trials.jpg);
+	}
+	
+	input[type=submit] {
+		display: none;
+	}
+	
+	</style>
+	
+	<script>
+	
+		var count=11;
+
+		var counter=setInterval(timer, 750); 
+		
+		function timer() {
+			count=count-1;
+			if (count < 0) {
+			clearInterval(counter);
+			location = "starthall.html";
+			alert("Too bad! Better luck next time!");
+			}
+	
+			document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+		}		
+		
+		function test1() {
+		
+			var number = document.getElementById("slider").value;
+		
+			if (count >= 0) {
+				if (number == 2) {
+					document.getElementById("quick1").remove();
+					document.getElementById("quick2").style.display = "block";
+				} else {
+					alert("Too bad!");
+					location = "starthall.html";
+				}
+			}
+			
+			return false;
+			
+		}
+		
+		function test2() {
+		
+			var number = document.getElementById("slider").value;
+		
+			if (count >= 0) {
+				if (number == 5) {
+					document.getElementById("quick2").remove();
+					document.getElementById("quick3").style.display = "block";
+				} else {
+					alert("Too bad!");
+					location = "starthall.html";
+				}
+			}
+			
+			return false;
+		
+		}
+		
+		function test3() {
+		
+		var number = document.getElementById("slider").value;
+		
+			if (count >= 0) {
+				if (number == 3) {
+					document.getElementById("quick3").remove();
+					document.getElementById("quick4").style.display = "block";
+				} else {
+					alert("Too bad!");
+					location = "starthall.html";
+				}
+			}
+			
+			return false;
+		
+		}
+		
+		function test4() {
+		
+		var number = document.getElementById("slider").value;
+		
+			if (count >= 0) {
+				if (number == 6) {
+					document.getElementById("quick4").remove();
+					document.getElementById("quick5").style.display = "block";
+				} else {
+					alert("Too bad!");
+					location = "starthall.html";
+				}
+			}
+			
+			return false;
+		
+		}
+		
+		function test5() {
+		
+		var number = document.getElementById("slider").value;
+		
+			if (count >= 0) {
+				if (number == 2) {
+					document.getElementById("quick5").remove();
+					document.getElementById("quick6").style.display = "block";
+				} else {
+					alert("Too bad!");
+					location = "starthall.html";
+				}
+			}
+			
+			return false;
+		
+		}
+		
+		function test6() {
+		
+		var number = document.getElementById("slider").value;
+		
+			if (count >= 0) {
+				if (number == 7) {
+					document.getElementById("quick6").remove();
+					document.getElementById("quick7").style.display = "block";
+				} else {
+					alert("Too bad!");
+					location = "starthall.html";
+				}
+			}
+			
+			return false;
+		
+		}
+		
+		function test7() {
+		
+		var number = document.getElementById("slider").value;
+		
+			if (count >= 0) {
+				if (number == 5) {
+					alert("Congrats! You passed all the trials!");
+					location = "revealout.html";
+				} else {
+					alert("Too bad!");
+					location = "starthall.html";
+				}
+			}
+			
+			return false;
+		
+		}
+	
+	
+	</script>
+	
+</head>
+
+<body>
+	
+	<audio autoplay="autoplay" loop>
+		<source src="music/FINAL FANTASY XV OST - Uncovered Trailer  Titan Demo Song.mp3" type="audio/mpeg">
+	</audio>
+
+	<h2 id="timer"></h2>
+    
+	<div id="quick1">
+    <div id="number"><h2>The number is 2.</h2></div>
+	
+	<form name="fast" method="post" onSubmit="return test1()">
+    
+	<input type="range" id="slider" max=7 min=1 required/>
+	<p><input type="submit" value="submit"/></p>
+	
+	</form>
+	</div>
+	
+	<div id="quick2" style="display:none";>
+	<h2 id="number">The number is 5.</h2>
+	
+	<form name="fast" method="post" onSubmit="return test2()">
+	
+	<input type="range" id="slider" max=7 min=1 required/>
+	<input type="submit" value="submit"/>
+	
+	</form>
+	</div>
+	
+	<div id="quick3" style="display:none";>
+	<h2 id="number">The number is 3.</h2>
+
+	<form name="fast" method="post" onSubmit="return test3()">
+	
+	<input type="range" id="slider" max=7 min=1 required/>
+	<input type="submit" value="submit"/>
+	
+	</form>
+	</div>
+	
+	<div id="quick4" style="display:none";>
+	<h2 id="number">The number is 6.</h2>
+
+	<form name="fast" method="post" onSubmit="return test4()">
+	
+	<input type="range" id="slider" max=7 min=1 required/>
+	<input type="submit" value="submit"/>
+	
+	</form>
+	</div>
+	
+	<div id="quick5" style="display:none";>
+	<h2 id="number">The number is 2.</h2>
+
+	<form name="fast" method="post" onSubmit="return test5()">
+	
+	<input type="range" id="slider" max=7 min=1 required/>
+	<input type="submit" value="submit"/>
+	
+	</form>
+	</div>
+	
+	<div id="quick6" style="display:none";>
+	<h2 id="number">The number is 7.</h2>
+
+	<form name="fast" method="post" onSubmit="return test6()">
+	
+	<input type="range" id="slider" max=7 min=1 required/>
+	<input type="submit" value="submit"/>
+	
+	</form>
+	</div>
+	
+	<div id="quick7" style="display:none";>
+	<h2 id="number">The number is 5.</h2>
+
+	<form name="fast" method="post" onSubmit="return test7()">
+	
+	<input type="range" id="slider" max=7 min=1 required/>
+	<input type="submit" value="submit"/>
+	
+	</form>
+	</div>
+
+
+</body>
+
+</html>
